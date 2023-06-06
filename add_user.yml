@@ -1,6 +1,6 @@
 ---
 
-- hosts: "{{ target }}"
+- hosts: "{{ ansible_host }}"
   any_errors_fatal: true
   connection: local
   gather_facts: false
