@@ -1,6 +1,6 @@
 ---
 
-- hosts: "{{ ansible_host }}"
+- hosts: all
   any_errors_fatal: true
   connection: local
   gather_facts: false
