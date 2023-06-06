@@ -37,9 +37,9 @@
  
   - name: Modify GUI Banner Name
     bigip_command:
-    commands:
-      - modify sys db ui.advisory.text { value "${HOSTNAME}-Migrated-`date +%Y%m%d`"}
-      - modify sys db ui.advisory.color { value "Blue" }
+      commands:
+        - modify sys db ui.advisory.text { value "${HOSTNAME}-Migrated-`date +%Y%m%d`"}
+        - modify sys db ui.advisory.color { value "Blue" }
       provider: "{{ bigip_provider }}"
     register: mod_banner
     when: 
