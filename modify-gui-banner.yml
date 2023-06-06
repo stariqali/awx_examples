@@ -1,5 +1,8 @@
 ---
-
+#- modify sys db ui.advisory.color { value "Green" }
+#- modify sys db ui.advisory.color { value "Red" }   
+#Green=prod/stable     Red=maintenance/warning     Blue=in deployment
+      
 - hosts: all
   any_errors_fatal: true
   connection: local
@@ -36,10 +39,7 @@
     bigip_command:
     commands:
       - modify sys db ui.advisory.text { value "${HOSTNAME}-Migrated-`date +%Y%m%d`"}
-      #- modify sys db ui.advisory.color { value "Green" }
       - modify sys db ui.advisory.color { value "Blue" }
-      #- modify sys db ui.advisory.color { value "Red" }
-      #Green=prod/stable     Red=maintenance/warning     Blue=in deployment
       provider: "{{ bigip_provider }}"
     register: mod_banner
     when: 
